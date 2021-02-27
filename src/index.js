@@ -9,5 +9,5 @@ module.exports = function toReadable (number) {
         result = onesArr[number];
     }
     
-    return number;
+    return result;
 }
