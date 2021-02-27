@@ -24,6 +24,14 @@ module.exports = function toReadable (number) {
         result = tensArr[tens];
     }
     
+    if (number > 100 && (number % 10 === 0)) {
+        result = `${hundredArr[hundred]} ${tensArr[tens]}`;
+    }
+    
+    if (hundred !== 0 && tens === -1) {
+        result = `${hundredArr[hundred]} ${onesArr[ones]}`;
+    }
+    
     if (number % 100 === 0) {
         result = hundredArr[hundred];
     }
