@@ -3,7 +3,7 @@ module.exports = function toReadable (number) {
     let tens;
     let ones = number % 10;
     let onesArr = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
-    let tensArr = ['ten', 'twenty', 'thirty', 'fourty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+    let tensArr = ['ten', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
     
     let result = '';
     
@@ -15,7 +15,11 @@ module.exports = function toReadable (number) {
         result = `${tensArr[tens]} ${onesArr[ones]}`;
     }
     
-    if (number === 10) {result = 'ten';}
+    if (number < 100 && number > 10 && (number % 10 === 0)) {
+        tens = number / 10 - 1;
+        result = tensArr[tens];
+    }
+    
     if (number === 100) {result = 'one hundred';}
     
     return result;
