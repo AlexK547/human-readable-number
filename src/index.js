@@ -7,7 +7,7 @@ module.exports = function toReadable (number) {
     
     let result = '';
     
-    if (number < 100 && number > 10) {tens = number / 10;}
+    if (number < 100 && number > 10) {tens = (number / 10) - 1;}
     
     if (number < 10) {
         result = onesArr[number];
